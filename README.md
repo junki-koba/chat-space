@@ -31,13 +31,13 @@ Things you may want to cover:
 - has_many :groups
 - has_many :massage
 
- ##グループテーブル
+ ## グループテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|null: false|
 |chatmenber|string|null: ture|
 
-##messageテーブル
+## messageテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text||
@@ -46,7 +46,7 @@ Things you may want to cover:
 - belongs_to :user
 - has_many :comments
 
-##commeentテーブル
+## commeentテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
