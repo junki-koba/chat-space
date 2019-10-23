@@ -44,16 +44,12 @@ Things you may want to cover:
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
 - belongs_to :user
-- has_many :comments
+- belongs_to :group
 
-## commeentテーブル
+## user_groupテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|tweet_id|integer|null: false, foreign_key: true｜
-- belongs_to :message
-- belongs_to :user
-
+|user|string|null: false|
+|group_name|string|null: false|
 
 
