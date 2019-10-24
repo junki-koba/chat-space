@@ -1,0 +1,28 @@
+@import "./reset";
+.wrapper {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 300px;
+  .chat-side {
+    background-color: #2f3e51;
+    width: 300px;
+    height: 1000px;
+    .side-header{
+      background-color: #253141;
+      height: 100px;
+      display: flex;
+      padding: 20px;
+    }
+  }
+} .chat-main{
+    width: calc(100vw-300px);
+    float: left;
+}
+
+
+
+
+/*
+ *= require font-awesome
+ */
