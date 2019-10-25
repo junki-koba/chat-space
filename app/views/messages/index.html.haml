@@ -1,0 +1,37 @@
+.wrapper  
+  .chat-side
+    .side-header
+      .side-header_box
+        .side-header_box_user-name 
+          name
+        .side-header_box_menu
+          .side-header_box_menu_new-group
+            = fa_icon 'edit', class:"icons"
+          .side-header_box_menu_edit-user
+            = fa_icon 'cog', class: "icons"
+    .groups
+      .grpup 
+        .group_group_name
+        .group_latest-messages
+  .chat-main
+    .main-header
+      .main-header_left-box
+        .main-header_left-box_current-group
+        .main-header_left-box_menber-list
+        .main-header_left-box_menber-list_menber
+      .main-header_edit_btn  
+        Edit
+    .messages
+      .messages_upper-info
+        .messages_upper-info_talker
+        .messages_upper-info_date
+    .form  
+      .new_message
+        .input_box
+          .input_box_text
+            type a text
+            .input_box_image
+              =fa_icon "image", class:"icon"
+              .input_box_image_file
+        .submit-btn
+          Send
