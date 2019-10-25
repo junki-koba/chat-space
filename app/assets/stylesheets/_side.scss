@@ -2,11 +2,13 @@
   width: 300px;
   color: white;
   float: left;
+  margin: 0;
+  padding: 0;
   .side-header{
     background-color: #253141;
     height: 100px;
     display: flex;
-    padding: 20px;
+    padding: 0 20px;
     align-items: center;
     .side-header_box{
       display: flex;
@@ -19,7 +21,7 @@
       }
       .side-header_box_menu{
         display: flex;
-        
+        @import "font-awesome";
       }
     }
   }
