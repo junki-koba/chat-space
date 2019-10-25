@@ -74,7 +74,7 @@
           padding: 0 40px 0 10px;
           color: #434a54;
           border-style: none;
-          background-color: darkgray;
+          background-color: white;
           .input_box_image{
             font-size: 1.3rem;
             position: absolute;
@@ -99,6 +99,8 @@
         background-color: #38aef0;
         color: white;
         cursor: pointer;
+        display: flex;
+        align-items: center;     
       }
     }
   }
