@@ -1,7 +1,22 @@
 .side-header_box_menu_new-group{
   margin-left: 0.3rem;
+  %ifa.fa-edit{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+
+  }
 }
 .side-header_box_menu_edit-user{
   margin-left: 0.3rem;
+  %ifa.fa-edit{
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
 
 }

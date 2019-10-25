@@ -36,7 +36,8 @@
     
   
   .messages{
-    height: calc(100vh - 190px);
+    height: calc(100vh - 210px);
+    box-sizing: border-box;
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;

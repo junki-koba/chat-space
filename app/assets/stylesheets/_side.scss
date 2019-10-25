@@ -12,7 +12,7 @@
     align-items: center;
     .side-header_box{
       display: flex;
-      width: 100px;
+      width: 100%;
       font-weight: bold;
       justify-content: space-between;
       .side-header_box_user-name{
@@ -21,7 +21,9 @@
       }
       .side-header_box_menu{
         display: flex;
-        @import "font-awesome";
+        list-style: none;
+        float: right;
+        // @import "font-awesome";
       }
     }
   }
