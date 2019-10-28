@@ -2,13 +2,15 @@
   .chat-side
     .side-header
       .side-header_box
-        .side-header_box_user-name 
-          name
+        .side-header_box_user-name aaa
         .side-header_box_menu
           .side-header_box_menu_new-group
             = fa_icon 'edit', class:"icons"
           .side-header_box_menu_edit-user
-            = fa_icon 'cog', class: "icons"
+            = link_to edit_user_path(current_user) do
+              = fa_icon 'cog', class: "icons" 
+
+
     .groups
       .grpup 
         .group_group_name
