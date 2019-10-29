@@ -1,24 +1,5 @@
 .wrapper  
-  .chat-side
-      .wrapper
-        = render 'shared/side_bar'
-    .side-header
-      .side-header_box
-        .side-header_box_user-name 
-          = current_user.name
-        .side-header_box_menu
-          .side-header_box_menu_new-group
-            = link_to new_group_path(current_user) do
-              = fa_icon 'edit', class:"icons"
-          .side-header_box_menu_edit-user
-            = link_to edit_user_path(current_user) do
-              = fa_icon 'cog', class: "icons" 
-
-
-    .groups
-      .group 
-        .group_group_name
-        .group_latest-messages
+  = render 'shared/side_bar'
   .chat-main
     .main-header
       .main-header_left-box
