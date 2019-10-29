@@ -1,8 +1,11 @@
 .wrapper  
   .chat-side
+      .wrapper
+        = render 'shared/side_bar'
     .side-header
       .side-header_box
-        .side-header_box_user-name aaa
+        .side-header_box_user-name 
+          = current_user.name
         .side-header_box_menu
           .side-header_box_menu_new-group
             = link_to new_group_path(current_user) do
@@ -13,7 +16,7 @@
 
 
     .groups
-      .grpup 
+      .group 
         .group_group_name
         .group_latest-messages
   .chat-main
