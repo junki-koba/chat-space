@@ -6,19 +6,20 @@
         .main-header_left-box_current-group
         .main-header_left-box_menber-list
         .main-header_left-box_menber-list_menber
-      .main-header_edit_btn  
+      .main-header_edit_btn 
         Edit
     .messages
-      .messages_upper-info
-        .messages_upper-info_talker
-        .messages_upper-info_date
-    .form  
+      = render @messages
+      
+    .form
       .new_message
-        .input_box
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'input_box', placeholder: 'type a message'
+        = f.label :image, class: 'input_box_text' do
           .input_box_text
-            type a text
             .input_box_image
-              =fa_icon "image", class:"icon"
-              .input_box_image_file
-        .submit-btn
-          Send
+              = fa_icon 'image', class: 'icon'
+            .input_box_image_file
+              = f.file_field :image, class: 'hidden'
+          .submit-btn    
+            = f.submit 'Send', class: 'submit-btn'
