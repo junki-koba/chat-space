@@ -31,7 +31,6 @@ $(function(){
     .done(function(message){
      var html  = buildHTML(message);
     $('.messages').append(html)
-    // $('.input_box').val('') 
     $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     $( ".submit-btn").prop( "disabled", false );
     })
