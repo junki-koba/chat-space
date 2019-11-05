@@ -12,14 +12,10 @@
       = render @messages
       
     .form
-      .new_message
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'input_box', placeholder: 'type a message'
-        = f.label :image, class: 'input_box_text' do
-          .input_box_text
-            .input_box_image
-              = fa_icon 'image', class: 'icon'
-            .input_box_image_file
-              = f.file_field :image, class: 'hidden'
-          .submit-btn    
-            = f.submit 'Send', class: 'submit-btn'
+        = f.text_field :content, class: 'form__message', id: 'new_message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
