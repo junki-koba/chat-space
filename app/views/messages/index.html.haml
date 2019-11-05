@@ -6,8 +6,11 @@
         .main-header_left-box_current-group
         .main-header_left-box_menber-list
         .main-header_left-box_menber-list_menber
-      .main-header_edit_btn 
-        Edit
+      = link_to edit_group_path(@group) do
+        .main-header_edit_btn 
+          Edit
+
+
     .messages
       = render @messages
       

@@ -94,11 +94,12 @@ li {
     float: left;
   }
   &__btn {
-    float: right;
+    // float: right;
     display: inline-block;
     cursor: pointer;
     &--add {
       color: #38aef0;
+      float: right;
     }
     &--remove {
       color: #f05050;
