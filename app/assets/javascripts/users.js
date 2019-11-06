@@ -66,6 +66,6 @@ $(function(){
     $(this)
       .parent()
       .remove()
-        console.log("イベント")
+
   });
 });
