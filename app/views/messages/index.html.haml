@@ -4,7 +4,10 @@
     .main-header
       .main-header_left-box
         .main-header_left-box_current-group
+          =@group.name
         .main-header_left-box_menber-list
+          -@group.users.each do |user| 
+            =user.name
         .main-header_left-box_menber-list_menber
       = link_to edit_group_path(@group) do
         .main-header_edit_btn 
