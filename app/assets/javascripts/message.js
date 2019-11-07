@@ -1,10 +1,10 @@
 $(document).on('turbolinks:load',function(){
   $(function(){
     function buildHTML(message){
-      var imagehtml = message.image == null ? "" : `<img src="${message.image}" class="messages_upper-info">`
-      var html = `<div class="messages_upper-info">
+      var imageHtml = message.image ? `<img class="messages_upper-info" src="${message.image}" >` : ""
+      var html = `<div class="messages_upper-info" data-message-id = "${message.id}>
                   <div class="messages_upper-info_talker">
-                  ${message.group_name}
+                  ${message.user_name}
                   </div>
                   <div class="messages_upper-info_date">
                   ${message.created_at}
@@ -12,7 +12,7 @@ $(document).on('turbolinks:load',function(){
                   <p class="lower-message__content">
                   ${message.content}
                   </p>
-                  ${imagehtml}
+                  ${imageHtml}
                   </div>`
       return html;
     }
@@ -38,5 +38,29 @@ $(document).on('turbolinks:load',function(){
         alert('error');
       });
     })
+
+    var reloadMessages = function() {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){ 
+        last_message_id = $('.messages_upper-info:last').data('message-id');
+        $.ajax({
+          url: "api/messages",
+          type: 'get',
+          dataType: 'json',
+          data: {id: last_message_id}
+        })
+        .done(function(messages) {
+          var insertHTML='';
+          messages.forEach(function(message) {
+            insertHTML = buildHTML(message);
+            $('.messages').append(insertHTML);
+          });
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        })
+        .fail(function() {
+          alert('自動更新に失敗しました');
+        });
+      }
+    };
+    setInterval(reloadMessages, 5000);
   });
 });
