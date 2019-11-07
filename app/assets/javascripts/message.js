@@ -12,7 +12,7 @@ $(document).on('turbolinks:load',function(){
                   <p class="lower-message__content">
                   ${message.content}
                   </p>
-                  ${imageHtml}
+                    ${imageHtml}
                   </div>`
       return html;
     }
