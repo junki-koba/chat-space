@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+<<<<<<< Updated upstream
   before_action :set_group
   def index  
     @message = Message.new
@@ -24,4 +25,9 @@ class MessagesController < ApplicationController
   def set_group
     @group = Group.find(params[:group_id])
   end
+=======
+  def index  
+  end
+
+>>>>>>> Stashed changes
 end

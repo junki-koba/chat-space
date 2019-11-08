@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 %html
   %head
@@ -11,3 +12,44 @@
     = yield
 
       
+=======
+-# !!!
+-# %html
+-#   %head
+-#     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+-#     %title ChatSpace
+-#     = csrf_meta_tags
+-#     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+-#     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+-#   %body
+-#     = yield
+!!!
+%html{lang: "ja"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpaceSample
+    %meta{:content => "authenticity_token", :name => "csrf-param"}/
+    %meta{:content => "6aJYj6G04+yWfskAHIfHC0CR6SUJxseRzvIOroMRkv5G164HnTLAf2WWsPG8NVFubjJtqojz99n6vz4e42gJjA==", :name => "csrf-token"}/
+    %link{"data-turbolinks-track" => "reload", :href => "/assets/application-20597f7122b97f433c4487edf7d6a0cfc9e951e2a661b8b0c7320b95bbd38ccd.css",:media => "all", :rel => "stylesheet"}/
+    %script{"data-turbolinks-track" => "reload", :src => "/assets/application-92a91cf5753a538c5407a46c726acab43576fb46358ffa8a7ee0ee0719aa2f51.js"}
+  %body
+    .flash-box
+    .wrapper
+      .chat-side
+        .side-header
+          .side-header__box
+            %p.side-header__box__user-name 
+            %ul.side-header__box__menu
+              %li.side-header__box__menu__new-group
+                %a{:href => "/groups/new"}
+                  %i.fa.fa-edit
+              %li.side-header__box__menu__edit-user
+                %a{:href => "/users/1469/edit"}
+                  %i.fa.fa-cog
+        .groups
+          %a{:href => "/groups/3115/messages"}
+            .group
+              %p.group__group-name 
+              %p.group__latest-message 
+
+>>>>>>> Stashed changes

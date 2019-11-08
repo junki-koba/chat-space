@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< Updated upstream
   def index
     @users = User.where('name LIKE(?)', "%#{params[:keyword]}%").where.not(id: current_user.id)
     respond_to do |format|
@@ -19,5 +20,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email)
+=======
+  def show
+    
+>>>>>>> Stashed changes
   end
 end

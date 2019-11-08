@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+<<<<<<< Updated upstream
   before_action :set_group, only: [:edit, :update]
 
   def index
@@ -31,5 +32,8 @@ class GroupsController < ApplicationController
   end
   def set_group
     @group = Group.find(params[:id])
+=======
+  def show 
+>>>>>>> Stashed changes
   end
 end
