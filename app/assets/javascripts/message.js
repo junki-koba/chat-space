@@ -1,8 +1,8 @@
 $(document).on('turbolinks:load',function(){
   $(function(){
     function buildHTML(message){
-      var imageHtml = message.image ? `<img class="messages_upper-info" src="${message.image}" >` : ""
-      var html = `<div class="messages_upper-info" data-message-id = "${message.id}>
+      var imageHtml = message.image ? `<img class="messages_upper-info_image" src="${message.image}" >` : ""
+      var html = `<div class="messages_upper-info" data-message-id="${message.id}">
                   <div class="messages_upper-info_talker">
                   ${message.user_name}
                   </div>
@@ -19,7 +19,7 @@ $(document).on('turbolinks:load',function(){
     $('#new_message').on('submit', function(e){
       e.preventDefault();
       var formData = new FormData(this);
-      var url = $(this).attr('action')
+      var url = $(this).attr('action');
       $.ajax({
         url: url,
         type: "POST",
@@ -29,8 +29,8 @@ $(document).on('turbolinks:load',function(){
         contentType: false
       })
       .done(function(message){
-      var html  = buildHTML(message);
-      $('.messages').append(html)
+        var html  = buildHTML(message);
+      $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       $(".submit-btn").prop( "disabled", false );
       })
@@ -42,6 +42,7 @@ $(document).on('turbolinks:load',function(){
     var reloadMessages = function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)){ 
         last_message_id = $('.messages_upper-info:last').data('message-id');
+        // console.log($('.messages_upper-info:last').data('message-id'));
         $.ajax({
           url: "api/messages",
           type: 'get',
