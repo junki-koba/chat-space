@@ -32,7 +32,8 @@ $(document).on('turbolinks:load',function(){
         var html  = buildHTML(message);
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      $(".submit-btn").prop( "disabled", false );
+      $("form")[0].reset();
+      $(".form__submit").prop( "disabled", false );
       })
       .fail(function(){
         alert('error');
@@ -42,7 +43,6 @@ $(document).on('turbolinks:load',function(){
     var reloadMessages = function() {
       if (window.location.href.match(/\/groups\/\d+\/messages/)){ 
         last_message_id = $('.messages_upper-info:last').data('message-id');
-        // console.log($('.messages_upper-info:last').data('message-id'));
         $.ajax({
           url: "api/messages",
           type: 'get',
@@ -50,6 +50,7 @@ $(document).on('turbolinks:load',function(){
           data: {id: last_message_id}
         })
         .done(function(messages) {
+          
           var insertHTML='';
           messages.forEach(function(message) {
             insertHTML = buildHTML(message);
@@ -62,6 +63,6 @@ $(document).on('turbolinks:load',function(){
         });
       }
     };
-    setInterval(reloadMessages, 5000);
+    setInterval(reloadMessages, 10000);
   });
 });
