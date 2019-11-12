@@ -27,13 +27,15 @@ $(document).on('turbolinks:load',function(){
         dataType: 'json',
         processData: false,
         contentType: false
+        
       })
       .done(function(message){
         var html  = buildHTML(message);
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       $("form")[0].reset();
-      $(".form__submit").removeAttr("data-disabled-with");
+      $(".form__submit").removeAttr("data-disable-with");
+      $(".form__submit").attr('disabled', false);
       })
       .fail(function(){
         alert('error');
