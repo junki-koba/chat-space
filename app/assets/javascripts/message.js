@@ -33,7 +33,7 @@ $(document).on('turbolinks:load',function(){
       $('.messages').append(html);
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       $("form")[0].reset();
-      $(".form__submit").prop( "disabled", false );
+      $(".form__submit").removeAttr("data-disabled-with");
       })
       .fail(function(){
         alert('error');
